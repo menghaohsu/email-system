@@ -6,7 +6,6 @@ var chalk = require('chalk');
 
 var rootPath = path.join(__dirname, '../../../');
 var indexPath = path.join(rootPath, './browser/index.html');
-var faviconPath = path.join(rootPath, './public/favicon.ico');
 
 var env = require(path.join(rootPath, './server/env'));
 

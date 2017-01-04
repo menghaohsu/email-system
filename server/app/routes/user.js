@@ -32,7 +32,6 @@ router.post('/sentEmail', (req, res, next) => {
 	.then(users => {
 		let promistArrOut = [];
 		users.forEach(user =>{
-			//let promise = new Promise((resolve, reject) =>{
 			const code = { couponCode: [], confirmationCode: []};
 			const promise = Dessert.findAll({
 				where: {
@@ -91,7 +90,6 @@ router.post('/sentEmail', (req, res, next) => {
 
 		        
 	        })
-			//})
 			promistArrOut.push(promise);	
 		})	
 		return Promise.all(promistArrOut)	

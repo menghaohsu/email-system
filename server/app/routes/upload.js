@@ -31,7 +31,6 @@ router.post('/uploadDessert', (req, res, next) => {
 });
 
 router.post('/deleteDessert', (req, res, next) => {
-	console.log(req.body)
 	Dessert.findOne({
 		where:{
 			month: Number(req.body.month),
