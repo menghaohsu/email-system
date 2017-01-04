@@ -12,9 +12,12 @@ var startServer = function () {
 
     var PORT = process.env.PORT || 1337;
 
-    server.listen(PORT, function () {
-        console.log('Server started on port' + PORT);
-    });
+    // server.listen(PORT, function () {
+    //     console.log('Server started on port' + PORT);
+    // });
+    server.listen(process.env.PORT || 3000, function(){
+	  console.log("Express server listening on port %d in %s mode", this.address().port);
+	});
 
 };
 
