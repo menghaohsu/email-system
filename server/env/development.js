@@ -1,3 +1,3 @@
 module.exports = {
-  'DATABASE_URI': 'postgres://localhost:5432/email-system'
+	'DATABASE_URI': 'postgres://localhost:5432/email-system'
 };

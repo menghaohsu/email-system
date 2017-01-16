@@ -1,24 +1,22 @@
-'use strict';
+const path = require('path');
+const util = require('util');
+const chalk = require('chalk');
 
-var path = require('path');
-var util = require('util');
-var chalk = require('chalk');
+const rootPath = path.join(__dirname, '../../../');
+const env = require(path.join(rootPath, './server/env'));
+const indexPath = path.join(rootPath, './browser/index.html');
+const faviconPath = path.join(rootPath, './server/app/views/favicon.png');
 
-var rootPath = path.join(__dirname, '../../../');
-var indexPath = path.join(rootPath, './browser/index.html');
-var faviconPath = path.join(rootPath, './server/app/views/favicon.ico');
-
-var env = require(path.join(rootPath, './server/env'));
-
-var logMiddleware = function (req, res, next) {
-    util.log(('---NEW REQUEST---'));
+const logMiddleware = (req, res, next) =>{
+    util.log(('--- NEW REQUEST ---'));
     console.log(util.format(chalk.red('%s: %s %s'), 'REQUEST ', req.method, req.path));
     console.log(util.format(chalk.yellow('%s: %s'), 'QUERY   ', util.inspect(req.query)));
     console.log(util.format(chalk.cyan('%s: %s'), 'BODY    ', util.inspect(req.body)));
+    util.log(('--- END REQUEST ---'));  
     next();
 };
 
-module.exports = function (app) {
+module.exports = (app) => {
   app.setValue('env', env);
   app.setValue('projectRoot', rootPath);
   app.setValue('indexHTMLPath', indexPath);

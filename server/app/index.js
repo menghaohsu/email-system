@@ -1,11 +1,9 @@
-'use strict';
-var path = require('path');
-var express = require('express');
-var bodyParser = require('body-parser')
-var swig = require('swig');
-var app = express();
+const path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser')
+const swig = require('swig');
 
-module.exports = app;
+const app = express();
 
 app.engine('html', swig.renderFile);
 app.set('view engine','html')
@@ -26,22 +24,24 @@ app.use('/api', require('./routes'));
  URLs that bypass express.static because the given file does not exist.
  */
 app.use(function (req, res, next) {
-
-    if (path.extname(req.path).length > 0) {
-        res.status(404).end();
-    } else {
-        next(null);
-    }
+  if (path.extname(req.path).length > 0) {
+    res.sendStatus(404);
+  } else {
+    next();
+  }
 
 });
 
 app.get('/*', function (req, res) {
-    res.sendFile(app.get('indexHTMLPath'));
+  res.sendFile(app.get('indexHTMLPath'));
 });
 
 // Error catching endware.
 app.use(function (err, req, res, next) {
-    console.error(err, typeof next);
-    console.error(err.stack)
-    res.status(err.status || 500).send(err.message || 'Internal server error.');
+  console.error(err, typeof next);
+  console.error(err.stack)
+  
+  res.status(err.status || 500).send(err.message || 'Internal server error.');
 });
+
+module.exports = app;

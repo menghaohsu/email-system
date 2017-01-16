@@ -1,7 +1,4 @@
-'use strict';
-
 const router = require('express').Router();
-module.exports = router;
 
 router.use('/upload', require('./upload'));
 router.use('/user', require('./user'));
@@ -12,3 +9,5 @@ router.use('/user', require('./user'));
 router.use((req, res) => {
   res.status(404).end();
 });
+
+module.exports = router;
