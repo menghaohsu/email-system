@@ -1,55 +1,66 @@
 <!DOCTYPE html>
-<head>
-  <link href="/stylesheets/main.css" rel="stylesheet" />
-  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
-  <script src="https://ucarecdn.com/widget/2.10.2/uploadcare/uploadcare.full.min.js" charset="utf-8"></script>
-  <script>
-    UPLOADCARE_PUBLIC_KEY = '435658ab8c57f80721d4';
-  </script>
-</head>
-
-<body>
-  <div class="container">
-    <header>
-      <h1>Super Sugar</h1>
-    </header>
-  <nav>
-  </nav>
-  <article>
-    <form action="/api/upload/uploadDessert" method="POST">
-      Fourth Dessert Picture:
-      <input type="hidden" role="uploadcare-uploader" name="image"/></br>
-      Fourth Dessert name:
-      <input name="name" type="text"/></br>
-      Fourth Dessert Desription:</br>
-​      <textarea name="description" rows="10" cols="70"></textarea></br>
-      <select name="month">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-      </select>
-      <select name="year">
-        <option value="2016">2016</option>
-        <option value="2017">2017</option>
-        <option value="2018">2018</option>
-        <option value="2019">2019</option>
-        <option value="2020">2020</option>
-        <option value="2021">2021</option>
-        <option value="2022">2022</option>
-        <option value="2023">2023</option>
-      </select>
-      <input type="submit" value="Submit" />
-    </form>
-  <a href="index.html">Menu</a>
-  </article>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Email System</title>
+        <link href="/stylesheets/main.css" rel="stylesheet" />
+        <script>
+            UPLOADCARE_PUBLIC_KEY = '435658ab8c57f80721d4';
+        </script>
+        <script src="https://ucarecdn.com/widget/2.10.2/uploadcare/uploadcare.full.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Register Dessert Shop of the Month</h1>
+            </header>
+            <nav></nav>
+            <article>
+                <form action="/api/upload/uploadDessert" method="POST">
+                    Dessert Picture:
+                    <input type="hidden" role="uploadcare-uploader" name="image" />
+                    <br />
+                    Dessert name:
+                    <input name="name" type="text" />
+                    <br />
+                    Dessert Description:
+                    <br />
+                    <textarea name="description" rows="10" cols="70"></textarea>
+                    <br />
+                    Desser of the Month / Year:
+                    <select name="month">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select name="year">
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                    </select>
+                    <br />
+                    <input type="submit" value="Submit" />
+                </form>
+                <br />
+                <a href="/index.html">Main Menu</a>
+            </article>
+        </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    </body>
+</html>

@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<head>
-  <link href="/stylesheets/main.css" rel="stylesheet" />
-</head>
-
-<body>
-  <div class="container">
-  <header>
-    <h1>Super Sugar</h1>
-  </header>
-  <nav>       
-  </nav>
-  <article>
-    <form action="/api/user/addUser" method="POST">
-      User first name:
-      <input name="firstName" type="text"/></br>
-      User last name:
-      <input name="lastName" type="text"/></br>
-      User Email:</br>
-​        <textarea name="email" type="text"></textarea></br>
-      <input type="submit" value="Submit" />
-    </form>
-    <a href="index.html">Menu</a>
-  </article>
- </body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Email System</title>
+        <link href="/stylesheets/main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Register Subscribed User</h1>
+            </header>
+            <nav>
+            </nav>
+            <article>
+                <form action="/api/user/addUser" method="POST">
+                    User first name:
+                    <input name="firstName" type="text" />
+                    <br />
+                    User last name:
+                    <input name="lastName" type="text" />
+                    <br />
+                    User Email:
+                    ​<input name="email" type="text" />
+                    <br />
+                    <input type="submit" value="Submit" />
+                </form>
+                <br />
+                <a href="index.html">Main Menu</a>
+            </article>
+        </div>
+    </body>
+</html>

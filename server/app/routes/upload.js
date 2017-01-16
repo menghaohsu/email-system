@@ -13,8 +13,8 @@ router.get('/', (req, res, next) => {
 router.get('/selectDate', (req, res, next) => {
 	Dessert.findAll({ where: req.query})
 	  .then((desserts) => {
-		  res.render('show', {desserts: desserts})
-	  }).catch(next);	
+		  res.render('show', { desserts, title: 'Email System' });
+	  }).catch(next);
 })
 
 router.post('/uploadDessert', (req, res, next) => {
@@ -22,7 +22,7 @@ router.post('/uploadDessert', (req, res, next) => {
 	  .then((desserts) => {
 		  Dessert.create(req.body)
 		    .then((dessert) => res.redirect('../../../index.html'))
-	  }).catch(next);	
+	  }).catch(next);
 });
 
 router.post('/deleteDessert', (req, res, next) => {

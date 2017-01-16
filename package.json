@@ -21,7 +21,7 @@
     "-------------- INTERNAL -------------": "",
     "eslint": "eslint --format 'node_modules/eslint-friendly-formatter' --ext .js,.jsx .",
     "-------------- LOCAL DEV ------------": "",
-    "dev:start": "nodemon --watch ./server -e js,html server/start.js"
+    "dev:start": "nodemon --watch . -e js,html server/start.js"
   },
   "engines": {
     "node": "6.1.0",

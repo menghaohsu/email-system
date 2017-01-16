@@ -1,19 +1,25 @@
 {% extends 'layout.html' %}
+
 {% block content %}
-<h1>Hello</h1>
-
-{% for dessert in desserts %}
-<li>
-  <img src="{{dessert.image}}">
-  Dessert Name: {{dessert.dataValues.name}}<br>
-  Dessert Description: {{dessert.description}}</br>
-  <form action='/api/upload/deleteDessert' method='POST'>
-    <input type="hidden" name="month" value="{{dessert.dataValues.month}}">
-    <input type="hidden" name="year" value="{{dessert.dataValues.year}}">
-    <button name="name" value="{{dessert.dataValues.name}}">Delete</button>
-  </form>
-</li>
-
-{% endfor %}
-<a href="../../index.html">Menu</a>
+    <h1>Dessert Register</h1>
+    <ul>
+        {% for dessert in desserts %}
+            <li class="list-unstyled">
+                <img src="{{ dessert.image }}">
+                <br />
+                Dessert Name: {{ dessert.dataValues.name }}
+                <br />
+                Dessert Description: {{ dessert.description }}
+                <br />
+                <form action='/api/upload/deleteDessert' method='POST'>
+                    <input type="hidden" name="month" value="{{ dessert.dataValues.month }}">
+                    <input type="hidden" name="year" value="{{ dessert.dataValues.year }}">
+                    <button name="name" value="{{ dessert.dataValues.name }}">Delete</button>
+                </form>
+            </li>
+            <br />
+        {% endfor %}
+    </ul>
+    <br />
+    <a href="../../index.html">Main Menu</a>
 {% endblock %}
