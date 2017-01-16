@@ -15,4 +15,4 @@ startDb
   .catch(function (err) {
     console.error(err);
     process.kill(1);
-   });
+  });

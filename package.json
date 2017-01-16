@@ -7,14 +7,21 @@
     "ip": "0.0.0.0",
     "port": 1337,
     "databases": {
-        "type": "postgres",
-        "host": "127.0.0.1",
-        "port": 1337,
-        "dbName": "email-system"
+      "type": "postgres",
+      "host": "127.0.0.1",
+      "port": 1337,
+      "dbName": "email-system"
     }
   },
   "scripts": {
-    "start": "nodemon --watch ./server -e js,html server/start.js"
+    "-------------- EXPOSED --------------": "",
+    "start": "node --stack-size=65500 server/start.js",
+    "start-prod": "NODE_ENV=production node --stack-size=65500 server/start.js",
+    "lint": "npm run eslint",
+    "-------------- INTERNAL -------------": "",
+    "eslint": "eslint --format 'node_modules/eslint-friendly-formatter' --ext .js,.jsx .",
+    "-------------- LOCAL DEV ------------": "",
+    "dev:start": "nodemon --watch ./server -e js,html server/start.js"
   },
   "engines": {
     "node": "6.1.0",
@@ -54,6 +61,12 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-friendly-formatter": "^2.0.7",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
     "mocha": "^2.5.1"
   },
   "author": "Paul Hsu",
