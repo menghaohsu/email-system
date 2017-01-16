@@ -4,15 +4,15 @@
   "description": "An email system with web interface for Sugarpost administrators.",
   "main": "./server/start.js",
   "config": {
-    "ip": "0.0.0.0",
-    "port": 1337,
-    "databases": {
-      "type": "postgres",
-      "host": "127.0.0.1",
-      "port": 1337,
-      "dbName": "email-system"
-    }
-  },
+		"ip": "0.0.0.0",
+		"port": 1337,
+		"databases": {
+			"type": "postgres",
+			"host": "127.0.0.1",
+			"port": 5432,
+			"dbName": "email-system"
+		}
+	},
   "scripts": {
     "-------------- EXPOSED --------------": "",
     "start": "node --stack-size=65500 server/start.js",
